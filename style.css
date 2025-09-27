@@ -1,0 +1,100 @@
+body {
+    min-height: 100vh;
+    margin: 30;
+    background-image: url('6260308.jpg'), url('pexels.jpeg');
+    background-size: 65%, cover;           /* Primeira imagem menor, segunda cobre tudo */
+    background-repeat: no-repeat, no-repeat;
+    background-position: center 100px, top left; /* Ajuste as posições conforme desejar */
+    font-family:  Arial, Helvetica, sans-serif;
+}
+.underline-nav {
+    display: flex;
+    gap: 20px;
+    position: fixed;   /* Torna o menu fixo */
+    top: 130px;         /* Distância do Menu do topo */ /* Ajuste para alinhar verticalmente sobre a imagem */
+    right: 250px;      /* Distância do menu da direita */
+    z-index: 100;      /* Garante que fique acima do fundo */
+    background: rgba(0,0,0,0.3); /* Fundo semitransparente opcional */
+    padding: 12px 24px;
+    border-radius: 16px;
+}
+.underline-nav a {
+    position: relative;
+    color: #fafafa;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: 0.5s ease;
+}
+.underline-nav a:hover {
+    color: #34e7e4;
+}
+.underline-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #34e7e4;
+    transition: width 0.3s ease;
+}
+.underline-nav a:hover::after {
+    width: 100%;
+}
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+                   /* Fundo preto com transparência */ /*removido para ficar transparente */    
+    padding: 5px 0;  
+}
+.social-icons {
+    margin-top: 5px;
+     position: fixed;   /* Torna o menu fixo */
+    bottom: 100px;         /* Distância do Menu do topo */ /* Ajuste para alinhar verticalmente sobre a imagem */
+    right: 45%;      /* Distância do menu da direita */
+    z-index: 100;      /* Garante que fique acima do fundo */
+}
+.social-icons a {
+    color: #34e7e4;
+    margin: 0 8px;
+    font-size: 22px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: #22bcb8;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-form input[type="text"] {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-form button {
+    background: #34e7e4;
+    border: none;
+    border-radius: 50%;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background: #22bcb8;
+}

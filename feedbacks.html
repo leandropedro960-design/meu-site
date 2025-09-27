@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Feedbacks Recebidos</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .feedback-table {
+            margin: 40px auto;
+            background: #fff;
+            border-collapse: collapse;
+            width: 80%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .feedback-table th, .feedback-table td {
+            border: 1px solid #ccc;
+            padding: 12px 16px;
+            text-align: left;
+        }
+        .feedback-table th {
+            background: #34e7e4;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav class="underline-nav">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Contact.html">Contact</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="feedbacks.html">Feedbacks</a>
+    </nav>
+    
+</body>
+<!-- Modal de Feedbacks -->
+<div id="feedbackModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Feedbacks Recebidos</h2>
+    <ul id="feedbackList">
+      <!-- Feedbacks serão inseridos aqui dinamicamente -->
+    </ul>
+  </div>
+</div>
+
+<!-- Botão para abrir o modal -->
+<button onclick="openModal()" class="feedback-btn">Ver Feedbacks</button>
+
+<script>
+  // Exemplo de feedbacks (pode ser substituído por dados reais)
+  const feedbacks = [
+    "Ótimo site, muito intuitivo!",
+    "Gostei do quiz, parabéns!",
+    "Poderia ter mais perguntas sobre JavaScript."
+  ];
+
+  function openModal() {
+    document.getElementById('feedbackModal').style.display = 'block';
+    const list = document.getElementById('feedbackList');
+    list.innerHTML = '';
+    feedbacks.forEach(fb => {
+      const li = document.createElement('li');
+      li.textContent = fb;
+      list.appendChild(li);
+    });
+  }
+
+  function closeModal() {
+    document.getElementById('feedbackModal').style.display = 'none';
+  }
+
+  // Fecha o modal ao clicar fora dele
+  window.onclick = function(event) {
+    const modal = document.getElementById('feedbackModal');
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+<footer>
+    <p>&copy; 2025 Quiz para Programadores. Todos os direitos reservados.</p>
+    <p>Para conhecer outros quizzes <a href="#" target="_blank">Clique aqui</a></p>   
+</footer>
+</html>
